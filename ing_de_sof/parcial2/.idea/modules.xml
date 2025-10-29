@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Aplicacion/Aplicacion.iml" filepath="$PROJECT_DIR$/Aplicacion/Aplicacion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gestion_inventarios/Gestion_inventarios.iml" filepath="$PROJECT_DIR$/Gestion_inventarios/Gestion_inventarios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gestion_inventarios/Gestion_inventarios2/Gestion_inventarios2.iml" filepath="$PROJECT_DIR$/Gestion_inventarios/Gestion_inventarios2/Gestion_inventarios2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gestion_inventarios/Gestion_inventarios3/Gestion_inventarios3.iml" filepath="$PROJECT_DIR$/Gestion_inventarios/Gestion_inventarios3/Gestion_inventarios3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/parcial2.iml" filepath="$PROJECT_DIR$/.idea/parcial2.iml" />
+    </modules>
+  </component>
+</project>
