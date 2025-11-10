@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - GlobalMarket</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div class="contenedor">
+    <div class="formulario">
+      <h1>🌎 Crear cuenta</h1>
+      <p>Únete a <strong>GlobalMarket Corp</strong> y comienza a comprar y vender en todo el mundo.</p>
+
+      <form action="procesar_registro.php" method="POST">
+        <div class="input-grupo">
+          <label>Nombre completo</label>
+          <input type="text" name="" placeholder="Ej: Edeleen Crisley" required>
+        </div>
+
+        <div class="input-grupo">
+          <label>Correo electrónico</label>
+          <input type="email" name="" placeholder="Ej: eseit@campus.edu.co" required>
+        </div>
+
+        <div class="input-grupo">
+          <label>Contraseña</label>
+          <input type="password" name="" placeholder="Crea una contraseña segura" required>
+        </div>
+
+        <div class="input-grupo">
+          <label>País</label>
+          <input type="text" name="" placeholder="Ej: Colombia" required>
+        </div>
+
+        <button type="submit" class="btn">Registrarse</button>
+
+        <p class="enlace">¿Ya tienes cuenta?
+          <a href="login.html">Inicia sesión aquí</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
