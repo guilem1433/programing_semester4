@@ -8,7 +8,7 @@ CREATE TABLE `usuario` (
 
 CREATE TABLE `suscripcion` (
   `id_plan` int PRIMARY KEY,
-  `varchar` nombre,
+  `nombre` varchar(23) ,
   `precio` int,
   `can_dispos` varchar(255),
   `calidad_vid` varchar(255),
