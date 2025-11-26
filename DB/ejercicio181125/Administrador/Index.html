@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración – ESEIT</title>
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado-eseit">
+        <h1>ESEIT – <span>Administración</span></h1>
+        <hr>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2 class="titulo-menu">Administración</h2>
+
+        <ul class="menu">
+            <li><a href="#" onclick="cargar('panel')" class="activo">🏛️ Panel General</a></li>
+            <li><a href="#" onclick="cargar('documentos')">📂 Gestión Documental</a></li>
+            <li><a href="#" onclick="cargar('facturacion')">🧾 Facturación</a></li>
+            <li><a href="#" onclick="cargar('personal')">👥 Control de Personal</a></li>
+            <li><a href="#" onclick="cargar('inventario')">📦 Inventarios</a></li>
+            <li><a href="#" onclick="cargar('reportes')">📊 Reportes Administrativos</a></li>
+            <li><a href="#" onclick="cargar('soporte')">🛠️ Soporte Técnico</a></li>
+            <li><a href="#" onclick="cargar('ayuda')">❓ Ayuda</a></li>
+        </ul>
+    </aside>
+
+    <!-- CONTENIDO -->
+    <main class="contenido" id="contenido">
+        <!-- Se llena dinámicamente -->
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

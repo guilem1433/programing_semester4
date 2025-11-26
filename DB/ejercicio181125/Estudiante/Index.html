@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESEIT – Estudiante</title>
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+
+    <header class="encabezado-eseit">
+        <h1>ESEIT – <span>Estudiantes</span></h1>
+        <hr>
+    </header>
+
+    <aside class="sidebar">
+        <h2 class="titulo-menu">Panel del Estudiante</h2>
+
+        <ul class="menu">
+            <li><a href="#" onclick="cargar('aula')" class="activo">🏫 Mi Aula Virtual</a></li>
+            <li><a href="#" onclick="cargar('materias')">📚 Mis Asignaturas</a></li>
+            <li><a href="#" onclick="cargar('notas')">📝 Notas y Evaluaciones</a></li>
+            <li><a href="#" onclick="cargar('horario')">📅 Horario Académico</a></li>
+            <li><a href="#" onclick="cargar('progreso')">🎓 Progreso Académico</a></li>
+            <li><a href="#" onclick="cargar('material')">📥 Material de Estudio</a></li>
+            <li><a href="#" onclick="cargar('mensajes')">💬 Mensajes</a></li>
+            <li><a href="#" onclick="cargar('pagos')">💳 Pagos y Finanzas</a></li>
+            <li><a href="#" onclick="cargar('ayuda')">❓ Ayuda Estudiantil</a></li>
+        </ul>
+    </aside>
+
+    <main class="contenido" id="contenido"></main>
+
+    <script src="main.js"></script>
+</body>
+</html>

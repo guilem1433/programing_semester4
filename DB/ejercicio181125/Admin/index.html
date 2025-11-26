@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESEIT – Administrador General</title>
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+
+    <header class="encabezado-eseit">
+        <h1>ESEIT – <span>Administrador General</span></h1>
+        <hr>
+    </header>
+
+    <aside class="sidebar">
+        <h2 class="titulo-menu">Panel Administrativo</h2>
+
+        <ul class="menu">
+            <li><a onclick="cargar('dashboard')" class="activo">🏠 Dashboard</a></li>
+            <li><a onclick="cargar('usuarios')">👥 Gestión de Usuarios</a></li>
+            <li><a onclick="cargar('roles')">🧩 Perfiles y Roles</a></li>
+            <li><a onclick="cargar('bd')">🗄️ Bases de Datos</a></li>
+            <li><a onclick="cargar('reportes')">📊 Reportes y Auditoría</a></li>
+            <li><a onclick="cargar('academico')">🎓 Gestión Académica</a></li>
+            <li><a onclick="cargar('administrativo')">💼 Administrativo</a></li>
+            <li><a onclick="cargar('biblioteca')">📚 Biblioteca</a></li>
+            <li><a onclick="cargar('config')">⚙️ Configuración</a></li>
+            <li><a onclick="cargar('seguridad')">🔐 Seguridad</a></li>
+            <li><a onclick="cargar('soporte')">🛠️ Centro de Soporte</a></li>
+        </ul>
+    </aside>
+
+    <main id="contenido" class="contenido"></main>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
