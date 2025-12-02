@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+}
+
+body{
+  display:flex;
+  background:linear-gradient(135deg,#001b30,#003a5c);
+  color:white;
+  min-height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar{
+  width:260px;
+  background:linear-gradient(180deg,#002941,#00476d);
+  padding:20px;
+  height:100vh;
+  position:fixed;
+  box-shadow:6px 0 25px rgba(0,0,0,0.3);
+}
+.brand h2{
+  color:#40bfff;
+}
+.brand small{
+  color:#aee1ff;
+}
+.menu{
+  margin-top:20px;
+  list-style:none;
+}
+.menu li{
+  padding:12px;
+  border-radius:8px;
+  margin:5px 0;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transition:0.2s;
+}
+.menu li:hover{
+  background:rgba(255,255,255,0.08);
+}
+.menu li.active{
+  background:#40bfff;
+  color:#001628;
+}
+
+/* MAIN */
+.main{
+  margin-left:260px;
+  padding:20px;
+  width:100%;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.search{
+  display:flex;
+  align-items:center;
+  background:rgba(255,255,255,0.08);
+  padding:8px 12px;
+  border-radius:10px;
+  gap:10px;
+}
+.search input{
+  background:transparent;
+  border:none;
+  outline:none;
+  color:white;
+}
+
+.user img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+}
+
+/* SECTIONS */
+.section{
+  margin-top:20px;
+}
+.hidden{
+  display:none;
+}
+
+/* CARDS */
+.cards{
+  display:flex;
+  gap:20px;
+}
+.card{
+  flex:1;
+  background:#003450;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* LIST ITEMS */
+.list .item{
+  background:rgba(255,255,255,0.05);
+  padding:12px;
+  border-radius:10px;
+  margin-top:10px;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* FORM */
+.card-form{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:12px;
+  width:380px;
+}
+.card-form input{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  border:none;
+  border-radius:6px;
+  background:rgba(255,255,255,0.15);
+  color:white;
+}
+
+.btn{
+  margin-top:12px;
+  padding:10px 14px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#40bfff;
+  font-weight:600;
+}
+.btn.danger{
+  background:#ff4d4d;
+}
+

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Administrador – GlobalTrust Bank</title>
+  <link rel="stylesheet" href="admin_banco.css" />
+  <script src="https://kit.fontawesome.com/a2d9d6e52f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <h2>GT Bank</h2>
+      <small>Administrador</small>
+    </div>
+
+    <ul class="menu">
+      <li class="active" data-section="dashboard"><i class="fa-solid fa-chart-pie"></i> Dashboard</li>
+      <li data-section="usuarios"><i class="fa-solid fa-users-gear"></i> Gestión de Usuarios</li>
+      <li data-section="roles"><i class="fa-solid fa-user-shield"></i> Perfiles y Roles</li>
+      <li data-section="bd"><i class="fa-solid fa-database"></i> Bases de Datos</li>
+      <li data-section="reportes"><i class="fa-solid fa-file-invoice-dollar"></i> Reportes & Auditoría</li>
+      <li data-section="seguridad"><i class="fa-solid fa-shield-halved"></i> Seguridad</li>
+      <li data-section="backups"><i class="fa-solid fa-cloud-arrow-up"></i> Backups</li>
+      <li data-section="config"><i class="fa-solid fa-gear"></i> Configuración</li>
+      <li data-section="logs"><i class="fa-solid fa-list-check"></i> Logs de Actividad</li>
+      <li data-section="salir"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <div class="left">
+        <i id="toggle" class="fa-solid fa-bars"></i>
+        <h1>Panel Administrador</h1>
+      </div>
+
+      <div class="right">
+        <div class="search">
+          <input id="searchAdmin" placeholder="Buscar usuario, informe o tabla..." />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="user">
+          <span id="adminName">Admin</span>
+          <img src="https://i.imgur.com/6VBx3io.png" alt="avatar" />
+        </div>
+      </div>
+    </header>
+
+    <section id="content" class="content">
+
+      <!-- DASHBOARD -->
+      <div class="section" id="dashboardSection">
+        <h2>Dashboard General</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Usuarios Totales</h3>
+            <p id="totalUsers">-</p>
+          </div>
+          <div class="card">
+            <h3>Transacciones hoy</h3>
+            <p id="txToday">-</p>
+          </div>
+          <div class="card">
+            <h3>Alertas de Seguridad</h3>
+            <p id="alertsCount">-</p>
+          </div>
+        </div>
+
+        <div class="panel-wide">
+          <h3>Resumen Rápido</h3>
+          <div id="resumenQuick" class="list"></div>
+        </div>
+      </div>
+
+      <!-- GESTIÓN DE USUARIOS -->
+      <div class="section hidden" id="usuariosSection">
+        <div class="section-header">
+          <h2>Gestión de Usuarios</h2>
+          <button class="btn" id="btnNewUser">+ Crear Usuario</button>
+        </div>
+
+        <div class="table" id="usersTable"></div>
+      </div>
+
+      <!-- ROLES -->
+      <div class="section hidden" id="rolesSection">
+        <h2>Perfiles y Roles</h2>
+        <div class="card-form">
+          <label>Rol nuevo</label>
+          <input id="newRoleName" placeholder="Nombre del rol">
+          <label>Permisos (comma separated)</label>
+          <input id="newRolePerms" placeholder="perm1,perm2,...">
+          <button class="btn" id="createRoleBtn">Crear Rol</button>
+        </div>
+
+        <div id="rolesList" class="list"></div>
+      </div>
+
+      <!-- BASES DE DATOS -->
+      <div class="section hidden" id="bdSection">
+        <h2>Administrar Bases de Datos</h2>
+        <div class="card-form">
+          <label>Operación</label>
+          <select id="bdOp">
+            <option value="backup">Hacer backup</option>
+            <option value="restore">Restaurar</option>
+            <option value="optimize">Optimizar tablas</option>
+            <option value="runquery">Ejecutar consulta SQL</option>
+          </select>
+          <label>Parámetros / Consulta SQL</label>
+          <textarea id="bdParams" rows="5" placeholder="Ej: SELECT * FROM usuarios LIMIT 10"></textarea>
+          <button class="btn" id="runBdOp">Ejecutar</button>
+        </div>
+
+        <div id="bdResult" class="list"></div>
+      </div>
+
+      <!-- REPORTES Y AUDITORÍA -->
+      <div class="section hidden" id="reportesSection">
+        <h2>Reportes & Auditoría</h2>
+        <div class="card-form">
+          <label>Tipo de reporte</label>
+          <select id="reportType">
+            <option value="movimientos">Movimientos</option>
+            <option value="usuarios">Usuarios</option>
+            <option value="auditoria">Auditoría</option>
+          </select>
+          <label>Rango de fechas</label>
+          <input type="date" id="rFrom"> a <input type="date" id="rTo">
+          <button class="btn" id="genReport">Generar</button>
+        </div>
+
+        <div id="reportOutput" class="list"></div>
+      </div>
+
+      <!-- SEGURIDAD -->
+      <div class="section hidden" id="seguridadSection">
+        <h2>Seguridad</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>2FA Activados</h3>
+            <p id="count2fa">-</p>
+          </div>
+          <div class="card">
+            <h3>IPs Bloqueadas</h3>
+            <p id="countIPs">-</p>
+          </div>
+          <div class="card">
+            <h3>Intentos fallidos</h3>
+            <p id="countFails">-</p>
+          </div>
+        </div>
+
+        <div class="panel-wide">
+          <h3>Acciones Rápidas</h3>
+          <button class="btn" id="btnForcePassword">Forzar cambio de contraseña</button>
+          <button class="btn ghost" id="btnUnblock">Desbloquear IP/Usuario</button>
+        </div>
+      </div>
+
+      <!-- BACKUPS -->
+      <div class="section hidden" id="backupsSection">
+        <h2>Backups</h2>
+        <div class="card-form">
+          <label>Frecuencia</label>
+          <select id="backupFreq"><option>Diario</option><option>Semanal</option><option>Mensual</option></select>
+          <label>Destino</label>
+          <input id="backupDest" placeholder="s3://bucket/path o /backups/local">
+          <button class="btn" id="btnBackupNow">Hacer backup ahora</button>
+        </div>
+        <div id="backupLog" class="list"></div>
+      </div>
+
+      <!-- CONFIG -->
+      <div class="section hidden" id="configSection">
+        <h2>Configuración Global</h2>
+        <div class="card-form">
+          <label>Nombre del Banco</label><input id="cfgName" value="GlobalTrust Bank">
+          <label>Modo Mantenimiento</label>
+          <select id="cfgMaint"><option value="0">Desactivado</option><option value="1">Activado</option></select>
+          <button class="btn" id="saveConfig">Guardar Configuración</button>
+        </div>
+      </div>
+
+      <!-- LOGS -->
+      <div class="section hidden" id="logsSection">
+        <h2>Logs de Actividad</h2>
+        <div id="logsList" class="list"></div>
+      </div>
+
+      <!-- SALIR -->
+      <div class="section hidden" id="salirSection">
+        <h2>Cerrar Sesión</h2>
+        <p>Confirmar cierre de sesión administrativo.</p>
+        <button class="btn danger" id="logoutBtn">Cerrar sesión</button>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="admin_bank.js"></script>
+</body>
+</html>

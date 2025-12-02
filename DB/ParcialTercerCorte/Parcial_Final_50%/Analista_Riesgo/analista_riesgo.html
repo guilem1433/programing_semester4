@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analista de Riesgo – GT Bank</title>
+    <link rel="stylesheet" href="analista_riesgo.css">
+    <script src="https://kit.fontawesome.com/a2d9d6e52f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <div class="brand">
+        <h2>GT Bank</h2>
+        <small>Analista de Riesgo</small>
+    </div>
+
+    <ul class="menu">
+        <li class="active" data-section="inicio"><i class="fa-solid fa-chart-line"></i> Dashboard</li>
+        <li data-section="clientes"><i class="fa-solid fa-users"></i> Riesgo de Clientes</li>
+        <li data-section="operaciones"><i class="fa-solid fa-eye"></i> Operaciones Sospechosas</li>
+        <li data-section="crediticio"><i class="fa-solid fa-hand-holding-dollar"></i> Riesgo Crediticio</li>
+        <li data-section="operativo"><i class="fa-solid fa-gears"></i> Riesgo Operativo</li>
+        <li data-section="tecnologico"><i class="fa-solid fa-shield-halved"></i> Riesgo Tecnológico</li>
+        <li data-section="reportes"><i class="fa-solid fa-file-lines"></i> Reportes</li>
+        <li data-section="perfil"><i class="fa-solid fa-user"></i> Perfil</li>
+        <li data-section="salir"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</li>
+    </ul>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<header class="header">
+    <div class="left">
+        <i id="toggle" class="fa-solid fa-bars"></i>
+        <h1>Panel de Riesgo</h1>
+    </div>
+
+    <div class="user">
+        <span id="nombreUsuario">Analista</span>
+        <img src="https://i.imgur.com/6VBx3io.png" alt="avatar">
+    </div>
+</header>
+
+<section id="content" class="content">
+
+    <!-- DASHBOARD -->
+    <div class="section" id="inicioSection">
+        <h2>Dashboard General</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Clientes en riesgo alto</h3>
+                <p>126</p>
+            </div>
+
+            <div class="card">
+                <h3>Operaciones sospechosas</h3>
+                <p>14</p>
+            </div>
+
+            <div class="card">
+                <h3>Índice de morosidad</h3>
+                <p>3.2%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIESGO DE CLIENTES -->
+    <div class="section hidden" id="clientesSection">
+        <h2>Evaluación de Clientes</h2>
+
+        <div class="card-form">
+            <label>Documento / Cuenta</label>
+            <input id="buscarCliente">
+            <button class="btn" id="btnBuscarRiesgo">Evaluar Riesgo</button>
+        </div>
+
+        <div class="lista" id="resultadoRiesgo"></div>
+    </div>
+
+    <!-- OPERACIONES SOSPECHOSAS -->
+    <div class="section hidden" id="operacionesSection">
+        <h2>Operaciones Sospechosas (AML/FT)</h2>
+        <div class="lista" id="listaAML"></div>
+    </div>
+
+    <!-- RIESGO CREDITICIO -->
+    <div class="section hidden" id="crediticioSection">
+        <h2>Riesgo Crediticio</h2>
+
+        <div class="card-form">
+            <label>Número de préstamo</label>
+            <input>
+            <button class="btn">Consultar riesgo</button>
+        </div>
+    </div>
+
+    <!-- RIESGO OPERATIVO -->
+    <div class="section hidden" id="operativoSection">
+        <h2>Riesgo Operativo</h2>
+        <p>Incidentes y pérdidas por fallas internas.</p>
+    </div>
+
+    <!-- RIESGO TECNOLÓGICO -->
+    <div class="section hidden" id="tecnologicoSection">
+        <h2>Riesgo Tecnológico</h2>
+        <p>Amenazas, ciberataques e incidentes.</p>
+    </div>
+
+    <!-- REPORTES -->
+    <div class="section hidden" id="reportesSection">
+        <h2>Generación de Reportes</h2>
+        <button class="btn">Descargar Reporte PDF</button>
+    </div>
+
+    <!-- PERFIL -->
+    <div class="section hidden" id="perfilSection">
+        <h2>Mi Perfil</h2>
+
+        <div class="card-form">
+            <label>Nombre</label>
+            <input>
+
+            <label>Correo</label>
+            <input>
+
+            <button class="btn">Guardar cambios</button>
+        </div>
+    </div>
+
+    <!-- SALIR -->
+    <div class="section hidden" id="salirSection">
+        <h2>Cerrar Sesión</h2>
+        <button class="btn danger">Salir</button>
+    </div>
+
+</section>
+
+</main>
+
+<script src="analista_riesgo.js"></script>
+</body>
+</html>

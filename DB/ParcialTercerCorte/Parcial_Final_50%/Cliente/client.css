@@ -1,0 +1,155 @@
+/* Igual al del asesor, pero adaptado al cliente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif}
+
+body{
+    display:flex;
+    min-height:100vh;
+    background: linear-gradient(135deg,#0a1c36,#11345e);
+    color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:240px;
+    background:linear-gradient(180deg,#092038,#0d2a48);
+    height:100vh;
+    padding:20px;
+    position:fixed;
+    transition:.3s;
+}
+
+.brand h2{
+    color:#00d6ff;
+}
+
+.menu{
+    margin-top:20px;
+    list-style:none;
+}
+
+.menu li{
+    padding:12px;
+    border-radius:8px;
+    margin:6px 0;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    transition:.2s;
+}
+
+.menu li:hover{
+    background:rgba(255,255,255,0.1);
+}
+
+.menu li.active{
+    background:#00a8ff;
+    box-shadow:0 4px 12px rgba(0,140,255,0.4);
+}
+
+/* MAIN */
+.main{
+    margin-left:240px;
+    padding:20px;
+    width:100%;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header .left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.header .user{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.header img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+}
+
+/* SECTIONS */
+.section{
+    margin-top:25px;
+}
+
+.hidden{
+    display:none;
+}
+
+/* CARDS */
+.cards{
+    display:flex;
+    gap:20px;
+}
+
+.card{
+    background:#10294b;
+    padding:20px;
+    border-radius:14px;
+    flex:1;
+    box-shadow:0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* FORMULARIOS */
+.card-form{
+    background:#0e2a4a;
+    padding:20px;
+    border-radius:14px;
+    width:350px;
+}
+
+.card-form label{
+    margin-top:10px;
+    display:block;
+}
+
+.card-form input,
+.card-form select{
+    width:100%;
+    padding:10px;
+    margin:5px 0;
+    border:none;
+    border-radius:8px;
+    background:rgba(255,255,255,0.1);
+    color:white;
+}
+
+.btn{
+    background:#00a8ff;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    margin-top:15px;
+    width:100%;
+    cursor:pointer;
+    color:black;
+    font-weight:600;
+}
+
+.btn:hover{
+    background:#0092d4;
+}
+
+.btn.danger{
+    background:#ff4b4b;
+}
+
+.lista .item{
+    background:#10294b;
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+}

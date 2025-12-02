@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soporte Técnico – GT Bank</title>
+  <link rel="stylesheet" href="soporte_tecnico.css">
+  <script src="https://kit.fontawesome.com/a2d9d6e52f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <h2>GT Bank</h2>
+    <small>Soporte Técnico</small>
+  </div>
+
+  <ul class="menu">
+    <li class="active" data-section="dashboard"><i class="fa-solid fa-laptop-code"></i> Dashboard</li>
+    <li data-section="tickets"><i class="fa-solid fa-ticket"></i> Tickets</li>
+    <li data-section="equipos"><i class="fa-solid fa-computer"></i> Equipos</li>
+    <li data-section="infraestructura"><i class="fa-solid fa-network-wired"></i> Infraestructura</li>
+    <li data-section="incidentes"><i class="fa-solid fa-triangle-exclamation"></i> Incidentes</li>
+    <li data-section="seguridad"><i class="fa-solid fa-shield-halved"></i> Seguridad</li>
+    <li data-section="reportes"><i class="fa-solid fa-file-lines"></i> Reportes</li>
+    <li data-section="perfil"><i class="fa-solid fa-user-gear"></i> Perfil</li>
+    <li data-section="salir"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</li>
+  </ul>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+  <header class="header">
+    <div class="left">
+      <i id="toggle" class="fa-solid fa-bars"></i>
+      <h1>Panel de Soporte Técnico</h1>
+    </div>
+
+    <div class="right">
+      <div class="search">
+        <input id="buscarTicket" placeholder="Buscar tickets o equipos..." />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="user">
+        <span id="userName">Técnico</span>
+        <img src="https://i.imgur.com/6VBx3io.png" alt="avatar">
+      </div>
+    </div>
+  </header>
+
+  <section id="content" class="content">
+
+    <!-- DASHBOARD -->
+    <div class="section" id="dashboardSection">
+      <h2>Dashboard General</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Tickets Activos</h3>
+          <p id="ticketsActivos">-</p>
+        </div>
+        <div class="card">
+          <h3>Equipos en Mantenimiento</h3>
+          <p id="equiposMant">-</p>
+        </div>
+        <div class="card">
+          <h3>Alertas Críticas</h3>
+          <p id="alertasCriticas">-</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TICKETS -->
+    <div class="section hidden" id="ticketsSection">
+      <div class="section-header">
+        <h2>Tickets de Soporte</h2>
+        <button class="btn" id="crearTicketBtn">+ Crear Ticket</button>
+      </div>
+
+      <div id="ticketsLista" class="list"></div>
+    </div>
+
+    <!-- EQUIPOS -->
+    <div class="section hidden" id="equiposSection">
+      <h2>Equipos y Dispositivos</h2>
+      <div id="equiposLista" class="list"></div>
+    </div>
+
+    <!-- INFRAESTRUCTURA -->
+    <div class="section hidden" id="infraestructuraSection">
+      <h2>Infraestructura</h2>
+      <div class="cards">
+        <div class="card"><h3>Servidores</h3><p id="servStatus">OK</p></div>
+        <div class="card"><h3>Ancho de banda</h3><p>82%</p></div>
+        <div class="card"><h3>Tiempo activo</h3><p>99.99%</p></div>
+      </div>
+    </div>
+
+    <!-- INCIDENTES -->
+    <div class="section hidden" id="incidentesSection">
+      <h2>Incidentes</h2>
+      <div id="incidentesLista" class="list"></div>
+    </div>
+
+    <!-- SEGURIDAD -->
+    <div class="section hidden" id="seguridadSection">
+      <h2>Seguridad TI</h2>
+      <div class="cards">
+        <div class="card"><h3>IPs bloqueadas</h3><p id="ipsBloqueadas">-</p></div>
+        <div class="card"><h3>Intentos fallidos</h3><p id="intentosFallidos">-</p></div>
+        <div class="card"><h3>Accesos sospechosos</h3><p id="accesos">-</p></div>
+      </div>
+    </div>
+
+    <!-- REPORTES -->
+    <div class="section hidden" id="reportesSection">
+      <h2>Reportes de Soporte</h2>
+      <button class="btn">Generar reporte mensual</button>
+    </div>
+
+    <!-- PERFIL -->
+    <div class="section hidden" id="perfilSection">
+      <h2>Mi Perfil</h2>
+      <div class="card-form">
+        <label>Nombre</label><input>
+        <label>Correo</label><input>
+        <button class="btn">Guardar cambios</button>
+      </div>
+    </div>
+
+    <!-- SALIR -->
+    <div class="section hidden" id="salirSection">
+      <h2>Cerrar Sesión</h2>
+      <button class="btn danger" id="logoutBtn">Salir</button>
+    </div>
+
+  </section>
+</main>
+
+<script src="soporte_tecnico.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?php
+
+// Recibir datos del formulario
+$nombre = $_POST['nombre'];
+$correo = $_POST['correo'];
+$pass = $_POST['pass'];
+$pass2 = $_POST['pass2'];
+
+// Validaciones básicas
+if ($pass !== $pass2) {
+    echo "Error: Las contraseñas no coinciden.";
+    exit;
+}
+
+// Aquí podrías guardar en base de datos
+// Ejemplo simple de respuesta:
+echo "<h2>Registro exitoso</h2>";
+echo "<p>Nombre: $nombre</p>";
+echo "<p>Correo: $correo</p>";
+
+?>

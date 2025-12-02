@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente – GlobalTrust Bank</title>
+    <link rel="stylesheet" href="client.css">
+    <script src="https://kit.fontawesome.com/a2d9d6e52f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <div class="brand">
+        <h2>GT Bank</h2>
+        <small>Cliente</small>
+    </div>
+
+    <ul class="menu">
+        <li class="active" data-section="inicio"><i class="fa-solid fa-house"></i> Inicio</li>
+        <li data-section="cuentas"><i class="fa-solid fa-wallet"></i> Mis Cuentas</li>
+        <li data-section="transferencias"><i class="fa-solid fa-paper-plane"></i> Transferencias</li>
+        <li data-section="tarjetas"><i class="fa-solid fa-credit-card"></i> Tarjetas</li>
+        <li data-section="movimientos"><i class="fa-solid fa-clock-rotate-left"></i> Movimientos</li>
+        <li data-section="pagos"><i class="fa-solid fa-mobile"></i> Pagos</li>
+        <li data-section="perfil"><i class="fa-solid fa-user"></i> Mi Perfil</li>
+        <li data-section="config"><i class="fa-solid fa-gear"></i> Configuración</li>
+        <li data-section="salir"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</li>
+    </ul>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+    <header class="header">
+        <div class="left">
+            <i id="toggle" class="fa-solid fa-bars"></i>
+            <h1>Panel del Cliente</h1>
+        </div>
+
+        <div class="user">
+            <span id="nombreUsuario">Usuario</span>
+            <img src="https://i.imgur.com/6VBx3io.png" alt="avatar">
+        </div>
+    </header>
+
+    <section id="content" class="content">
+
+        <!-- INICIO -->
+        <div class="section" id="inicioSection">
+            <h2>Bienvenido a tu banca digital</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Saldo total</h3>
+                    <p id="saldoTotal">$ 3,480,000 COP</p>
+                </div>
+                <div class="card">
+                    <h3>Transacciones recientes</h3>
+                    <p id="transCount">12</p>
+                </div>
+                <div class="card">
+                    <h3>Tarjetas activas</h3>
+                    <p id="cardCount">2</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CUENTAS -->
+        <div class="section hidden" id="cuentasSection">
+            <h2>Mis Cuentas</h2>
+            <div class="lista" id="listaCuentas"></div>
+        </div>
+
+        <!-- TRANSFERENCIAS -->
+        <div class="section hidden" id="transferenciasSection">
+            <h2>Transferencias</h2>
+            <div class="card-form">
+                <label>Cuenta origen</label>
+                <select id="tr_origen"></select>
+
+                <label>Cuenta destino</label>
+                <input id="tr_destino" placeholder="Número de cuenta">
+
+                <label>Valor</label>
+                <input type="number" id="tr_valor">
+
+                <button class="btn" id="btnTransferir">Enviar</button>
+            </div>
+        </div>
+
+        <!-- TARJETAS -->
+        <div class="section hidden" id="tarjetasSection">
+            <h2>Tarjetas</h2>
+            <div class="lista" id="listaTarjetas"></div>
+        </div>
+
+        <!-- MOVIMIENTOS -->
+        <div class="section hidden" id="movimientosSection">
+            <h2>Historial de Movimientos</h2>
+            <div class="lista" id="listaMovimientos"></div>
+        </div>
+
+        <!-- PAGOS -->
+        <div class="section hidden" id="pagosSection">
+            <h2>Pagos</h2>
+            <p>Próximamente podrás pagar servicios, facturas y recargas.</p>
+        </div>
+
+        <!-- PERFIL -->
+        <div class="section hidden" id="perfilSection">
+            <h2>Mi Perfil</h2>
+            <div class="card-form">
+                <label>Nombre</label>
+                <input id="perfil_nombre">
+                <label>Correo</label>
+                <input id="perfil_correo">
+                <button class="btn">Guardar cambios</button>
+            </div>
+        </div>
+
+        <!-- CONFIGURACIÓN -->
+        <div class="section hidden" id="configSection">
+            <h2>Configuración</h2>
+            <p>Opciones generales de la cuenta.</p>
+        </div>
+
+        <!-- SALIR -->
+        <div class="section hidden" id="salirSection">
+            <h2>Cerrar Sesión</h2>
+            <button class="btn danger" id="logoutBtn">Salir</button>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="client.js"></script>
+</body>
+</html>

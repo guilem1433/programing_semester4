@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
+:root{
+  --bg:#0c1b33; --panel:#0f2440; --accent:#00a8ff; --glass:rgba(255,255,255,0.06);
+  --card:#0f2b4b; --muted:rgba(255,255,255,0.75);
+}
+body{
+  background: linear-gradient(135deg,var(--bg),#10264b 50%,#192f55);
+  min-height:100vh;
+  color:#fff;
+  display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+  width:250px;
+  background:linear-gradient(180deg,#062036,#0b2a4b);
+  padding:22px;
+  height:100vh;
+  position:fixed;
+  left:0; top:0;
+  box-shadow: 6px 0 20px rgba(0,0,0,0.4);
+}
+.brand h2{color:var(--accent);font-size:24px;margin-bottom:4px}
+.brand small{color:#9fb7d4;font-size:12px}
+.menu{list-style:none;margin-top:18px}
+.menu li{padding:12px;border-radius:10px;margin:8px 0;color:#dbeefc;cursor:pointer;display:flex;align-items:center;gap:12px;transition:all .18s}
+.menu li:hover{background:rgba(255,255,255,0.04);transform:translateX(6px)}
+.menu li.active{background:linear-gradient(90deg,var(--accent),#0061cc);color:#001725;box-shadow:0 6px 20px rgba(0,168,255,0.12)}
+
+/* MAIN */
+.main{margin-left:250px;flex:1;padding:18px 26px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:6px 0}
+.header .left{display:flex;align-items:center;gap:14px}
+#toggle{font-size:20px;cursor:pointer}
+.header h1{font-size:20px;color:#e6f7ff}
+.search{display:flex;align-items:center;gap:10px;background:var(--glass);padding:8px;border-radius:10px}
+.search input{background:transparent;border:none;color:#fff;outline:none;width:320px}
+.user{display:flex;align-items:center;gap:10px}
+.user img{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,0.06)}
+
+/* CONTENT */
+.content{margin-top:18px}
+.cards{display:flex;gap:18px;margin-bottom:18px}
+.card{flex:1;background:linear-gradient(180deg,#0f355f,#0d294b);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.35)}
+.card h3{font-size:14px;color:#cdeaff}
+.card p{font-size:22px;font-weight:700;margin-top:8px}
+
+/* RECENT / LIST */
+.recent{margin-top:18px}
+.list{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.list .item{background:rgba(255,255,255,0.03);padding:12px;border-radius:10px;display:flex;justify-content:space-between;align-items:center}
+.list .item small{color:#a9d6ff}
+
+/* TABLE / CLIENTES */
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.btn{background:var(--accent);color:#001725;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+.btn.ghost{background:transparent;color:#cfe9ff;border:1px solid rgba(255,255,255,0.06)}
+.table{background:linear-gradient(180deg,#071a2a,#0b273b);padding:12px;border-radius:12px}
+.client-row{display:flex;justify-content:space-between;padding:12px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.client-row:last-child{border-bottom:none}
+.client-row .meta{display:flex;gap:12px;align-items:center}
+.client-row .meta img{width:42px;height:42px;border-radius:50%}
+
+/* FORM GRID */
+.form-grid{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+.card-form{background:var(--card);padding:16px;border-radius:12px}
+.card-form label{display:block;font-size:13px;color:#cfe9ff;margin-top:10px}
+.card-form input, .card-form select{width:100%;padding:10px;border-radius:8px;border:none;margin-top:6px;background:rgba(255,255,255,0.03);color:#fff}
+.info{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));padding:14px;border-radius:12px}
+
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;visibility:hidden;opacity:0;transition:.2s}
+.modal.show{visibility:visible;opacity:1}
+.modal-inner{width:420px;background:linear-gradient(180deg,#0f2b47,#0b2340);padding:18px;border-radius:12px}
+.modal-inner h3{margin-bottom:8px}
+.modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:14px}
+
+/* HIDDEN CLASS */
+.hidden{display:none}
+
+/* RESPONSIVE */
+@media (max-width:980px){
+  .sidebar{width:70px}
+  .brand small{display:none}
+  .main{margin-left:70px}
+  .search input{width:160px}
+  .form-grid{grid-template-columns:1fr}
+}

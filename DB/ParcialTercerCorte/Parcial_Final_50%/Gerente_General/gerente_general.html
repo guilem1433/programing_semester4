@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerente General – GT Bank</title>
+    <link rel="stylesheet" href="gerente_general.css">
+    <script src="https://kit.fontawesome.com/a2d9d6e52f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <div class="brand">
+        <h2>GT Bank</h2>
+        <small>Gerente General</small>
+    </div>
+
+    <ul class="menu">
+        <li class="active" data-section="dashboard"><i class="fa-solid fa-chart-simple"></i> Dashboard General</li>
+        <li data-section="finanzas"><i class="fa-solid fa-money-bill-trend-up"></i> Finanzas</li>
+        <li data-section="operaciones"><i class="fa-solid fa-building-columns"></i> Operaciones</li>
+        <li data-section="usuarios"><i class="fa-solid fa-users-gear"></i> Usuarios y Empleados</li>
+        <li data-section="riesgos"><i class="fa-solid fa-shield"></i> Riesgos</li>
+        <li data-section="infraestructura"><i class="fa-solid fa-network-wired"></i> Infraestructura</li>
+        <li data-section="alertas"><i class="fa-solid fa-bell"></i> Alertas del Sistema</li>
+        <li data-section="reportes"><i class="fa-solid fa-file-lines"></i> Reportes</li>
+        <li data-section="config"><i class="fa-solid fa-gear"></i> Configuración General</li>
+        <li data-section="perfil"><i class="fa-solid fa-user-tie"></i> Mi Perfil</li>
+        <li data-section="salir"><i class="fa-solid fa-right-from-bracket"></i> Salir</li>
+    </ul>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+    <header class="header">
+        <div class="left">
+            <i id="toggle" class="fa-solid fa-bars"></i>
+            <h1>Panel del Gerente General</h1>
+        </div>
+
+        <div class="right">
+            <div class="search">
+                <input placeholder="Buscar información global..." />
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="user">
+                <span>Gerente</span>
+                <img src="https://i.imgur.com/6VBx3io.png">
+            </div>
+        </div>
+    </header>
+
+    <section id="content" class="content">
+
+        <!-- DASHBOARD -->
+        <div class="section" id="dashboardSection">
+            <h2>Indicadores Generales del Banco</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Activos Totales</h3>
+                    <p>$ 820,400,000</p>
+                </div>
+                <div class="card">
+                    <h3>Usuarios Registrados</h3>
+                    <p>1,280,450</p>
+                </div>
+                <div class="card">
+                    <h3>Transacciones Hoy</h3>
+                    <p>78,920</p>
+                </div>
+                <div class="card">
+                    <h3>Alertas Críticas</h3>
+                    <p id="alertasCriticas">3</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FINANZAS -->
+        <div class="section hidden" id="finanzasSection">
+            <h2>Reporte Financiero Global</h2>
+            <div class="list"></div>
+        </div>
+
+        <!-- OPERACIONES -->
+        <div class="section hidden" id="operacionesSection">
+            <h2>Operaciones Generales</h2>
+        </div>
+
+        <!-- USUARIOS -->
+        <div class="section hidden" id="usuariosSection">
+            <h2>Control de Usuarios y Empleados</h2>
+        </div>
+
+        <!-- RIESGOS -->
+        <div class="section hidden" id="riesgosSection">
+            <h2>Monitoreo de Riesgos</h2>
+        </div>
+
+        <!-- INFRAESTRUCTURA -->
+        <div class="section hidden" id="infraestructuraSection">
+            <h2>Infraestructura Tecnológica</h2>
+        </div>
+
+        <!-- ALERTAS -->
+        <div class="section hidden" id="alertasSection">
+            <h2>Alertas del Sistema</h2>
+        </div>
+
+        <!-- REPORTES -->
+        <div class="section hidden" id="reportesSection">
+            <h2>Generación de Reportes</h2>
+        </div>
+
+        <!-- CONFIG -->
+        <div class="section hidden" id="configSection">
+            <h2>Configuración General del Banco</h2>
+        </div>
+
+        <!-- PERFIL -->
+        <div class="section hidden" id="perfilSection">
+            <h2>Editar Perfil</h2>
+            <div class="card-form">
+                <label>Nombre</label>
+                <input>
+                <label>Correo</label>
+                <input>
+                <button class="btn">Guardar cambios</button>
+            </div>
+        </div>
+
+        <!-- SALIR -->
+        <div class="section hidden" id="salirSection">
+            <h2>¿Desea cerrar la sesión?</h2>
+            <button class="btn danger" id="logoutBtn">Cerrar sesión</button>
+        </div>
+
+    </section>
+</main>
+
+<script src="gerente_general.js"></script>
+</body>
+</html>

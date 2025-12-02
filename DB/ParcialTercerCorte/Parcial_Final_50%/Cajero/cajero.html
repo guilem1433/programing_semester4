@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero – GlobalTrust Bank</title>
+    <link rel="stylesheet" href="cajero.css">
+    <script src="https://kit.fontawesome.com/a2d9d6e52f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <div class="brand">
+        <h2>GT Bank</h2>
+        <small>Cajero</small>
+    </div>
+
+    <ul class="menu">
+        <li class="active" data-section="inicio"><i class="fa-solid fa-house"></i> Inicio</li>
+        <li data-section="buscar"><i class="fa-solid fa-magnifying-glass"></i> Buscar Cliente</li>
+        <li data-section="deposito"><i class="fa-solid fa-money-bill-trend-up"></i> Depósitos</li>
+        <li data-section="retiro"><i class="fa-solid fa-money-bill-transfer"></i> Retiros</li>
+        <li data-section="tarjetas"><i class="fa-solid fa-credit-card"></i> Tarjetas</li>
+        <li data-section="movimientos"><i class="fa-solid fa-list"></i> Movimientos</li>
+        <li data-section="alertas"><i class="fa-solid fa-triangle-exclamation"></i> Alertas</li>
+        <li data-section="perfil"><i class="fa-solid fa-user"></i> Perfil</li>
+        <li data-section="config"><i class="fa-solid fa-gear"></i> Configuración</li>
+        <li data-section="salir"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</li>
+    </ul>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+    <header class="header">
+        <div class="left">
+            <i id="toggle" class="fa-solid fa-bars"></i>
+            <h1>Panel del Cajero</h1>
+        </div>
+
+        <div class="user">
+            <span id="nombreUsuario">Cajero</span>
+            <img src="https://i.imgur.com/6VBx3io.png" alt="avatar">
+        </div>
+    </header>
+
+    <section id="content" class="content">
+
+        <!-- INICIO -->
+        <div class="section" id="inicioSection">
+            <h2>Bienvenido al Sistema de Caja</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Depósitos del día</h3>
+                    <p id="depCount">45</p>
+                </div>
+                <div class="card">
+                    <h3>Retiros procesados</h3>
+                    <p id="retCount">31</p>
+                </div>
+                <div class="card">
+                    <h3>Alertas activas</h3>
+                    <p id="alertCount">2</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BUSCAR CLIENTE -->
+        <div class="section hidden" id="buscarSection">
+            <h2>Buscar Cliente</h2>
+            <div class="card-form">
+                <label>Número de documento</label>
+                <input id="buscar_doc">
+                <button class="btn" id="btnBuscarCliente">Buscar</button>
+            </div>
+
+            <div class="lista" id="resultadoCliente"></div>
+        </div>
+
+        <!-- DEPÓSITOS -->
+        <div class="section hidden" id="depositoSection">
+            <h2>Registrar Depósito</h2>
+
+            <div class="card-form">
+                <label>Cuenta destino</label>
+                <input id="depCuenta">
+
+                <label>Valor del depósito</label>
+                <input type="number" id="depValor">
+
+                <button class="btn" id="btnDepositar">Procesar depósito</button>
+            </div>
+        </div>
+
+        <!-- RETIROS -->
+        <div class="section hidden" id="retiroSection">
+            <h2>Realizar Retiro</h2>
+
+            <div class="card-form">
+                <label>Cuenta</label>
+                <input id="retCuenta">
+
+                <label>Valor a retirar</label>
+                <input type="number" id="retValor">
+
+                <button class="btn" id="btnRetirar">Procesar retiro</button>
+            </div>
+        </div>
+
+        <!-- TARJETAS -->
+        <div class="section hidden" id="tarjetasSection">
+            <h2>Gestión de Tarjetas</h2>
+            <div class="lista" id="listaTarjetas"></div>
+        </div>
+
+        <!-- MOVIMIENTOS -->
+        <div class="section hidden" id="movimientosSection">
+            <h2>Historial de Movimientos</h2>
+            <div class="lista" id="listaMovimientos"></div>
+        </div>
+
+        <!-- ALERTAS -->
+        <div class="section hidden" id="alertasSection">
+            <h2>Alertas del Sistema</h2>
+            <p>Notificaciones sobre actividades sospechosas o cuentas bloqueadas.</p>
+        </div>
+
+        <!-- PERFIL -->
+        <div class="section hidden" id="perfilSection">
+            <h2>Mi Perfil</h2>
+            <div class="card-form">
+                <label>Nombre</label>
+                <input id="perfil_nombre">
+
+                <label>Correo</label>
+                <input id="perfil_correo">
+
+                <label>Turno</label>
+                <input id="perfil_turno">
+
+                <button class="btn">Guardar cambios</button>
+            </div>
+        </div>
+
+        <!-- CONFIG -->
+        <div class="section hidden" id="configSection">
+            <h2>Configuración</h2>
+            <p>Preferencias del cajero.</p>
+        </div>
+
+        <!-- SALIR -->
+        <div class="section hidden" id="salirSection">
+            <h2>Cerrar sesión</h2>
+            <button class="btn danger" id="logoutBtn">Salir</button>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="cajero.js"></script>
+</body>
+</html>

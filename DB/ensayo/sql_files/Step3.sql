@@ -18,3 +18,4 @@ CONSTRAINT pk_person PRIMARY KEY (person_id)
     food varchar(20),
     constraint pk_favorite_food primary key (person_id, food)
  );
+

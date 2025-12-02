@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Asesor Comercial – GlobalTrust</title>
+  <link rel="stylesheet" href="asesor.css" />
+  <script src="https://kit.fontawesome.com/a2d9d6e52f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <h2>GT Bank</h2>
+      <small>Asesor Comercial</small>
+    </div>
+    <ul class="menu">
+      <li class="active" data-section="dash"><i class="fa-solid fa-gauge-high"></i> Panel</li>
+      <li data-section="clientes"><i class="fa-solid fa-users"></i> Clientes</li>
+      <li data-section="nuevacuenta"><i class="fa-solid fa-file-circle-plus"></i> Crear Cuenta</li>
+      <li data-section="solicitudes"><i class="fa-solid fa-clipboard-list"></i> Solicitudes</li>
+      <li data-section="documentos"><i class="fa-solid fa-file-arrow-up"></i> Documentos</li>
+      <li data-section="alertas"><i class="fa-solid fa-bell"></i> Alertas</li>
+      <li data-section="perfil"><i class="fa-solid fa-user-cog"></i> Mi Perfil</li>
+      <li data-section="salir"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <div class="left">
+        <i id="toggle" class="fa-solid fa-bars"></i>
+        <h1>Panel Asesor Comercial</h1>
+      </div>
+      <div class="right">
+        <div class="search">
+          <input id="searchInput" placeholder="Buscar cliente por nombre o correo..." />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="user">
+          <span id="asesorName">Asesor</span>
+          <img src="https://i.imgur.com/6VBx3io.png" alt="avatar" />
+        </div>
+      </div>
+    </header>
+
+    <section id="content" class="content">
+      <!-- Secciones dinámicas -->
+      <!-- Panel -->
+      <div class="section" id="dashSection">
+        <div class="cards">
+          <div class="card">
+            <h3>Clientes registrados</h3>
+            <p id="countClients">0</p>
+          </div>
+          <div class="card">
+            <h3>Solicitudes pendientes</h3>
+            <p id="countRequests">0</p>
+          </div>
+          <div class="card">
+            <h3>Documentos por revisar</h3>
+            <p id="countDocs">0</p>
+          </div>
+        </div>
+
+        <div class="recent">
+          <h3>Últimas solicitudes</h3>
+          <div id="recentList" class="list"></div>
+        </div>
+      </div>
+
+      <!-- Clientes -->
+      <div class="section hidden" id="clientesSection">
+        <div class="section-header">
+          <h2>Clientes</h2>
+          <button class="btn" id="btnNuevoCliente">+ Nuevo Cliente</button>
+        </div>
+        <div class="table" id="clientsTable"></div>
+      </div>
+
+      <!-- Crear Cuenta -->
+      <div class="section hidden" id="nuevacuentaSection">
+        <h2>Crear Cuenta Bancaria</h2>
+        <div class="form-grid">
+          <div class="card-form">
+            <label>Cliente (correo)</label>
+            <input id="cc_cliente" placeholder="correo del cliente">
+            <label>Tipo de cuenta</label>
+            <select id="cc_tipo">
+              <option value="Ahorros">Ahorros</option>
+              <option value="Corriente">Corriente</option>
+              <option value="Nómina">Nómina</option>
+            </select>
+            <label>Moneda</label>
+            <select id="cc_moneda"><option value="COP">COP</option><option value="USD">USD</option></select>
+            <label>Saldo inicial</label>
+            <input id="cc_saldo" type="number" value="0">
+            <button class="btn" id="crearCuentaBtn">Crear Cuenta</button>
+          </div>
+          <div class="info">
+            <h3>Notas</h3>
+            <p>La cuenta quedará registrada y el cliente podrá verla en su perfil.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solicitudes -->
+      <div class="section hidden" id="solicitudesSection">
+        <h2>Solicitudes</h2>
+        <div class="section-header">
+          <h3>Solicitudes recientes</h3>
+        </div>
+        <div id="requestsList" class="list"></div>
+      </div>
+
+      <!-- Documentos -->
+      <div class="section hidden" id="documentosSection">
+        <h2>Documentos Subidos</h2>
+        <div class="section-header">
+          <input id="docClienteFilter" placeholder="Filtrar por cliente (correo)" />
+        </div>
+        <div id="docsList" class="list"></div>
+      </div>
+
+      <!-- Alertas -->
+      <div class="section hidden" id="alertasSection">
+        <h2>Alertas</h2>
+        <div id="alertsList" class="list"></div>
+      </div>
+
+      <!-- Perfil -->
+      <div class="section hidden" id="perfilSection">
+        <h2>Mi Perfil</h2>
+        <div class="card-form">
+          <label>Nombre</label>
+          <input id="inputAsesorName">
+          <label>Correo</label>
+          <input id="inputAsesorEmail">
+          <button class="btn" id="saveAsesorBtn">Guardar</button>
+        </div>
+      </div>
+
+      <!-- Salir -->
+      <div class="section hidden" id="salirSection">
+        <h2>Cerrar Sesión</h2>
+        <p>¿Deseas cerrar sesión?</p>
+        <button class="btn" id="confirmLogout">Salir</button>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- MODAL NUEVO CLIENTE -->
+  <div class="modal" id="modalCliente">
+    <div class="modal-inner">
+      <h3>Registrar Nuevo Cliente</h3>
+      <label>Nombre completo</label>
+      <input id="nc_nombre">
+      <label>Correo</label>
+      <input id="nc_correo">
+      <label>Teléfono</label>
+      <input id="nc_telefono">
+      <label>Documento (ID)</label>
+      <input id="nc_documento">
+      <div class="modal-actions">
+        <button class="btn" id="guardarCliente">Guardar</button>
+        <button class="btn ghost" id="cerrarModal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="asesor.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<?php
+
+// --- CONEXIÓN A LA BASE DE DATOS ---
+$conexion = new mysqli("localhost", "root", "", "banco");
+
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
+}
+
+// --- RECIBIR DATOS DEL LOGIN ---
+$correo = $_POST['correo'];
+$pass = $_POST['pass'];
+
+// --- OBTENER DOMINIO DEL CORREO ---
+$dominio = explode("@", $correo)[1];
+
+$tabla = "";
+$redirect = "";
+
+// --- DETERMINAR TABLA Y RUTA SEGÚN DOMINIO ---
+switch ($dominio) {
+    case "gerente.com":
+        $tabla = "gerente";
+        $redirect = "C:/xampp/htdocs/Parcial_Final_50%/Gerente_General/gerente_general.html";
+        break;
+
+    case "admin.com":
+        $tabla = "administrador";
+        $redirect = "C:/xampp/htdocs/Parcial_Final_50%/AdministradorDelBanco/admin_banco.html";
+        break;
+
+    case "analista.com":
+        $tabla = "analista";
+        $redirect = "C:/xampp/htdocs/Parcial_Final_50%/Analista_Riesgo/analista_riesgo.html";
+        break;
+
+    case "asesor.com":
+        $tabla = "asesor";
+        $redirect = "C:/xampp/htdocs/Parcial_Final_50%/Asesor_Comercial/asesor.html";
+        break;
+
+    case "cajero.com":
+        $tabla = "cajero";
+        $redirect = "C:/xampp/htdocs/Parcial_Final_50%/Cajero/cajero.html";
+        break;
+
+    case "cliente.com":
+        $tabla = "cliente";
+        $redirect = "C:/xampp/htdocs/Parcial_Final_50%/Cliente/index.html";
+        break;
+
+    case "soporte.com":
+        $tabla = "soporte";
+        $redirect = "C:/xampp/htdocs/Parcial_Final_50%/Soporte_Tecnico/soporte_tecnico.html";
+        break;
+
+    default:
+        echo "<script>
+            alert('Dominio no reconocido.');
+            window.location.href = 'index_login.html';
+        </script>";
+        exit;
+}
+
+// --- CONSULTAR USUARIO EN LA TABLA CORRECTA ---
+$consulta = $conexion->prepare("SELECT contrasena FROM $tabla WHERE correo = ?");
+$consulta->bind_param("s", $correo);
+$consulta->execute();
+$consulta->store_result();
+
+if ($consulta->num_rows === 0) {
+    echo "<script>
+        alert('Correo no registrado.');
+        window.location.href = 'index_login.html';
+    </script>";
+    exit;
+}
+
+// OBTENER LA CONTRASEÑA GUARDADA
+$consulta->bind_result($pass_db);
+$consulta->fetch();
+
+// --- VALIDAR CONTRASEÑA ---
+if ($pass !== $pass_db) {
+    echo "<script>
+        alert('Contraseña incorrecta.');
+        window.location.href = 'index_login.html';
+    </script>";
+    exit;
+}
+
+// --- LOGIN EXITOSO ---
+echo "<script>
+    alert('Inicio de sesión exitoso');
+    window.location.href = '$redirect';
+</script>";
+
+$conexion->close();
+
+?>
